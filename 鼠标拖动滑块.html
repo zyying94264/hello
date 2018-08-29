@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{padding: 0;margin: 0;}
+    div{width: 100px;height: 100px;position: absolute; background: #ff0000;}
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+var oDiv=document.getElementById("box")
+oDiv.onmousedown=function(ev){
+    var e=ev||event;
+    //块的当前位置：x0，y0
+    var x0=this.offsetLeft;
+    var y0=this.offsetTop;
+    // console.log(this.offsetLeft,this.offsetTop);
+    //鼠标的起点位置
+    var x1=e.clientX;
+    var y1=e.clientY;
+    // console.log(e.clientX,e.clientY);
+    document.onmousemove=function(ev){
+        var e = ev || event;
+        //鼠标终点位置：x2,y2
+        var x2=e.clientX;
+        var y2=e.clientY;
+        // console.log(e.clientX,e.clientY);
+      
+    
+         //  网页的宽，高 
+        var oWidth=oDiv.offsetWidth;
+        var disX=document.documentElement.clientWidth-oWidth||document.body.clientWidth-oWidth;
+        var oHight=oDiv.offsetHeight;
+        var disY=document.documentElement.clientHight-oHight||document.body.clientHeight-oHight;
+
+
+        //块终点的位置；
+         var x=(x2-x1)+x0;
+        var y=(y2-y1)+y0;
+        //给块设置边界
+        if(x<0) x=0;
+        if(y<0) y=0;
+        if(x>disX) x=disX;
+        if(y>disY) y=disY;
+
+        oDiv.style.left=x+"px";
+        oDiv.style.top=y+"px";
+    }
+    oDiv.onmouseup = function(){
+        document.onmousemove = null;
+    }
+    return false;
+
+}
+
+
+</script>
+</body>
+</html>
