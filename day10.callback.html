@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var show = function(){
+    alert('树不要皮必死无疑~');
+}
+
+//argument: 参数
+//callback:回调函数
+
+function fn(arg, callback){
+    alert(arg);
+    //callback;
+   callback && callback();//不写callback时,函数正常使用,不会报错.
+}
+
+fn('星垂平野阔');
+//fn('月涌大江流', show);
+</script> 
+</body>
+</html>

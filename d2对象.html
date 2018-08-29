@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+ //javascript中的一切都是对象object; 下列类型使用typeof验证时,都是object(fn除外), 可使用 constructor来查看类型.
+ //下列为: 创建某一类型的变量
+/* var num = new Number();//num.constructor;
+var str = new String();
+var bool = new Boolean();
+var arr = new Array();
+var obj = new Object();
+var fn = new Function(); */
+/*
+console口验证上述结果:
+num;
+Number {0}__proto__: Number[[PrimitiveValue]]: 0
+str;
+String {"", length: 0}
+bool;
+Boolean {false}
+arr;
+[]
+obj;
+{}
+fn
+ƒ anonymous(
+) {
+
+}
+*/
+//使用对象的方式创建变量(直接量))
+var num = new Number(5);//num.constructor;
+var str = new String("Are you Ok?");
+var bool = new Boolean(true);
+var arr = new Array(3,22,77,8);
+var obj = new Object({name:'wang', age:22});
+
+//Function 对象（类）:
+//var function_name = new function(arg1, arg2, ..., argN, function_body)
+var fn = new Function("name","alert('Hello '+name)");
+fn("Tom");
+
+ </script>   
+</body>
+</html>

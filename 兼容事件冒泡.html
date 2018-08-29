@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡</title>
+    <style>
+    div{ font: 40px/50px "黑体"; color: #fff;}
+    #one{width: 400px; height: 200px; background: #ff0000;}
+    #two{width: 200px; height: 100px; background: #ffff00;}
+    #in{width: 100px; height: 50px; background: #0000ff;}
+    </style>
+</head>
+<body>
+  <div id="one">one
+      <div id="two">two
+          <div id="in">in</div>
+      </div>
+  </div> 
+  <script>
+  var one = document.getElementById("one");
+  var two = document.getElementById("two");
+  var oIn = document.getElementById("in");
+//事件冒泡形成
+    //e.stopPropagation();
+    //e.cancelBubble=true
+/*
+  事实上stoppropagation和cancelBubble的作用是一样的，都是用来阻止浏览器默认的事件冒泡行为。
+
+不同之处在于stoppropagation属于W3C标准，试用于Firefox等浏览器，但是不支持IE浏览器。相反cancelBubble不符合W3C标准，而且只支持IE浏览器。所以很多时候，我们都要结合起来用。不过，cancelBubble在新版本chrome,opera浏览器中已经支持。
+*/
+//addEventListentner: 添加事件监听 适用于符合W3C的所有浏览器,IE9以下的低版本除外
+
+// one.addEventListener('click', function(){
+//     console.log("one");
+//    // e.stopPropagation();
+// },false);
+
+// two.addEventListener('click', function(e){
+//     console.log("two");
+//    // e.stopPropagation();
+// }, false);
+
+// oIn.addEventListener('click', function(e){
+//     console.log("in");
+//    // e.stopPropagation();
+// }, false);
+
+// one.addEventListener('click', function(){
+//     console.log("事件捕获: one");
+//    // e.stopPropagation();
+// },true);
+
+// two.addEventListener('click', function(e){
+//     console.log("事件捕获: two");
+//    // e.stopPropagation();
+// }, true);
+
+// oIn.addEventListener('click', function(e){
+//     console.log("事件捕获: in");
+//    // e.stopPropagation();
+// }, true);
+
+addEvent(one,'click',function(){
+    console.log("我用chrom");
+});
+//兼容所有浏览器的处理方法
+function addEvent(elem,type,handler){
+    if(elem.addEventListener){
+        elem.addEventListener(type,handler);
+    }else if(elem.attachEvent){
+        elem.attachEvent("on"+type,handler);
+    }
+    else{
+        elem["on"+click]=handler;
+    }
+}
+
+//IE9以下浏览器的处理办法
+/* one.attachEvent('onclick', function(){
+    alert("one");
+    window.event.cancelBubble = true;
+});
+two.attachEvent('onclick', function(){
+    alert("two");
+    window.event.cancelBubble = true;
+});
+oIn.attachEvent('onclick', function(){
+    alert("in");
+    window.event.cancelBubble = true;
+}); */
+
+/*
+***事件冒泡和事件捕获的本质: 指当dom对象发生多层嵌套事件时,事件的执行顺序:
+1.事件冒泡顺序: 从里往外
+2.事件捕获顺序: 从外往里
+3.同一元素绑定多个事件时, 先捕获后冒泡!!!
+
+obj.addEventListener(type, function(){
+}, false/true);
+默认false 事件冒泡
+true  事件捕获
+
+阻止事件冒泡： e.stopPropagation();
+
+
+IE: attachEvent(on+type, function(){
+});
+只支持事件冒泡 不支持事件捕获
+顺序是相反的   this指向window
+阻止事件冒泡： window.event.cancelBubble = true;
+*/
+  </script> 
+</body>
+</html>
