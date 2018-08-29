@@ -1,0 +1,73 @@
+@charset "utf-8";
+header .big{height: 80px; background: #F8F8F8;}
+header .big .logo img{width: 120px;}
+header .big .logo{margin: 15px;}
+header .big .peisong{width:310px;margin-left: 10px;overflow: hidden;line-height: 40px;padding-top: 13px;}
+header .big .peisong span{width:60px; height: 40px;}
+header .big .peisong .diqu{width: 200px;height:40px;border: 1px solid #F1F0F0;border-radius: 10px;}
+header .big .peisong .diqu li{width:50px;height: 20px; float: left;text-align: center;}
+header .big .peisong .diqu li a{border-right: 1px solid #ccc;padding-right: 10px;}
+header .big .peisong .diqu li:nth-child(4) a{border: none;}
+header .big .peisong .diqu li:hover a{text-decoration: none;}
+header .big .look{width: 300px;}
+header .big .look .look-up {margin-top: 15px;border: 1px solid #F0EEEE;border-radius: 8px;}
+header .big .look .look-up input{width:298px;height:35px;border:none; background:url(../images/che-fdj.jpg) no-repeat right center;}
+/*main*/
+main{width: 100%;overflow: hidden; background: #F8F8F8;}
+main .che-up{overflow: hidden;}
+main .che{width: 100%; padding-top: 20px;margin-bottom: 10px;height: 880px;}
+main .che .quanxuan{width:100%;height: 40px; border: 1px solid #DFDFDF;border-radius: 8px;line-height: 40px;background-color: #fff;}
+main .che .quanxuan dt{background:url(../images/kuang.jpg) no-repeat left center;text-indent: 3em;margin-left: 20px;position: relative;}
+main .che .quanxuan dt img{position: absolute; left: 7px ;top: 13px;display: none;}
+main .che .quanxuan dt:hover img{display: block;}
+main .che .quanxuan dd{float: left;margin-left: 100px;}
+
+
+main .che .meili{width: 100%;overflow: hidden;border: 1px solid #DFDFDF;margin-top: 20px;border-radius: 8px;background-color: #fff;}
+main .che .meili dl{width:100%;height: 40px; line-height: 40px;border-bottom:1px solid #DFDFDF; }
+main .che .meili dt{background:url(../images/kuang.jpg) no-repeat left center;text-indent: 3em;margin-left: 20px;position: relative;}
+main .che .meili dt img{position: absolute; left: 7px ;top: 13px;display: none;}
+main .che .meili dt:hover img{display: block;}
+main .che .meili dd{float: left;margin-left: 100px;}
+
+main .meili .shangpin{width: 100%;overflow: hidden;background: #;}
+main .meili .shangpin:hover{background: #FFF7F7;}
+main .meili .shangpin .kuang{width: 30px;height: 30px; background:url(../images/kuang.jpg) no-repeat center center;margin:50px 20px ;position: relative;}
+main .meili .shangpin .kuang img{position: absolute;left: 7px;top: 7px;display: none;}
+main .meili .shangpin .kuang:hover img{display: block;  }
+
+main .meili .shangpin .heng{width:800px;height:90px;margin: 30px;}
+main .meili .shangpin .heng li:nth-child(1){width: 400px; height: 300px;}
+main .meili .shangpin .heng li:nth-child(1) img{float: left;margin-right:20px; transition: 1.5s;width: 75px;height: 75px;}
+main .meili .shangpin .heng li:nth-child(1):hover img{transform: rotate(360deg) scale(0.7);}
+main .meili .shangpin .heng li span{float: left;width: 300px;}
+main .meili .shangpin .heng li span:nth-of-type(1) a{color:#000;font-weight: bold;}
+main .meili .shangpin .heng li span:nth-of-type(2){text-indent: 2em;margin-top: 5px;background:url(../images/tian7.jpg) no-repeat left center;width: 200px;}
+main .meili .shangpin .heng li span:nth-of-type(2):hover{border:1px dotted #f00;}
+main .meili .shangpin .heng li{float: left;}
+
+main .meili .shangpin .heng li:nth-child(2){width:100px;text-align: center;font-size: 12px;color: #000;margin-top: 5px;margin-left:30px;}
+main .meili .shangpin .heng li:nth-child(3){width: 70px;border: 1px solid #DFDFDF;margin-top: 5px;margin-left:30px;}
+main .meili .shangpin .heng li:nth-child(3) div{width: 22px;float: left;text-align: center;}
+main .meili .shangpin .heng li:nth-child(3) div{border-right: 1px solid  #DFDFDF;}
+main .meili .shangpin .heng li:nth-child(3) div:nth-child(3){border:none;}
+main .meili .shangpin .heng li:nth-child(4){font-size: 10px;color: #000;padding-left: 40px;} 
+main .meili .shangpin .heng li:nth-child(5){padding: 15px;}
+main .meili .jiage{width:100%;height: 40px; line-height: 40px;border-top:1px solid #DFDFDF;text-align: right;font-size: 14px;}
+main .meili .jiage span{color: #f00;font-weight: bold;}
+main .jiesuan{width:100%;height:60px;background-color: #fff;}
+main .jiesuan dl{padding-top: 20px;}
+main .jiesuan dl dt img{vertical-align: middle;padding-right: 10px;}
+main .jiesuan dl dt a:nth-of-type(1){border-right: 1px solid #999;}
+main .jiesuan dl dt a:nth-of-type(1) b{color: #f00;padding: 0 3px;}
+main .jiesuan dl dt a:nth-of-type(2){color: #999;padding-left: 10px;}
+main .jiesuan dl dt a:nth-of-type(2):hover {color:#f00; }
+main .jiesuan dl dt a:hover{text-decoration: none;}
+
+main .j-right{width: 360px;}
+main .j-right div{float: left;color: #000;line-height: 20px;padding-left: 5px;height: 20px;margin-top:20px; }
+main .j-right .gong {width: 100px;padding-right: 5px;margin-right: 10px;}
+main .j-right .gong b{color: #f00;padding: 0 2px;}
+main .j-right .he{border-left:1px solid #999;margin-right: 10px;}
+main .j-right .he span{color: #f00;font-size: 20px;}
+main .j-right .jie{width: 80px;height: 60px;background: #FF6C6C;margin-top: 0;line-height: 60px;font-size: 20px;font-weight: bold;color: #fff;text-align: center;padding-left: 0;margin:0 0 40px 20px;}

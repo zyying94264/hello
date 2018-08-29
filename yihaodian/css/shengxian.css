@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+#banner{background:url(../images/shengxian-bg.jpg) no-repeat center center;background-size:cover;height: 500px;}
+header .logo img{width: 260px;}
+
+main{overflow: hidden;}
+main .haowu {overflow: hidden;}
+main .haowu h2{width: 100%;height:150px;margin: 30px 0;background:url(../images/haowu.jpg) no-repeat center center;}
+main .haowu dl{width: 248px;height: 400px;text-align: center;font-weight: bold;float: left;}
+main .haowu dl dd{margin: 10px 0;}
+main .haowu dl dd:nth-of-type(1):hover a{color:#B13927;}
+main .haowu dl dd:nth-of-type(2){text-align: left; padding-left:15px;color: #E60041;}
+main .haowu dl dd:nth-of-type(3){width: 204px;margin: 0 auto;}
+main .haowu dl dd:nth-of-type(3) .gou{width: 100px;height:38px;background: #fff;text-indent: 2em;border: 1px solid #E60041;line-height: 38px;}
+main .haowu dl dd:nth-of-type(3) .gou a{color:#E60041;}
+main .haowu dl dd:nth-of-type(3) .mai{width: 100px;height:38px;background:#E60041;border: 1px solid #E60041;line-height: 38px;color: #fff;}
+main .haowu dl dd:nth-of-type(3) .mai a{color: #fff;}
+main .shuiguo h2{width: 100%;height:150px;background:url(../images/shengxian-shui.jpg) no-repeat center center;margin: 30px 0;}
+main .ruyin h2{width: 100%;height:150px;background:url(../images/shengxian-ru.jpg) no-repeat center center;margin: 30px 0;}
+main .haixian h2{width: 100%;height:150px;background:url(../images/shengxian-hai.jpg) no-repeat center center;margin: 30px 0;}
+main .zhuyang h2{width: 100%;height:150px;background:url(../images/shengxian-zhu.jpg) no-repeat center center;margin: 30px 0;}
+main .qinrou h2{width: 100%;height:150px;background:url(../images/shengxian-qin.jpg) no-repeat center center;margin: 30px 0;}
+
+
+
+
+
+
+
+
+
+
+
+
+

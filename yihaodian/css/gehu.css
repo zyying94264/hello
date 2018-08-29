@@ -1,0 +1,42 @@
+@charset "utf-8";
+header .big .logo img{width: 200px;}
+header {margin-bottom:-40px; }
+#banner{background: url(../images/gehu-banner.jpg)  no-repeat center center;background-size: cover;}
+
+main{width: 100%;background: #FEF1F0;overflow: hidden;}
+main .fenlei{padding-top: 20px;}
+main .fenlei li{float: left;padding-top: 10px;}
+main .topb{margin-top: 20px;}
+main .shenti{overflow: hidden; margin: 20px 0;}
+main .shenti .shen-l{width: 189px;height: 350px;background: #FDB456;}
+main .shenti .shen-l .shen-up .pinpai{width:180px; height: 50px;margin:auto;}
+main .shenti .shen-l .shen-up li{width:50px; height: 20px;float: left;text-align: center;border: 1px solid #fff;border-radius: 10px;margin:5px 3px;background: #F79144;}
+main .shenti .shen-l .shen-up li a{color: #fff;}
+main .shenti .shen-l .shen-up li:hover{transform: scale(1.1);}
+main .shenti .shen-l .shen-up li:hover a{text-decoration: none;}
+main .shenti .shen-r{width: 800px;height: 350px;background: #fff;}
+main .shenti .shen-r .shen-rup{width: 800px;height: 25px;padding: 10px 0;}
+main .shenti .shen-r .shen-rup img{position: absolute;top: 19px;left: 0;}
+main .shenti .shen-r .shen-rup li{width: 160px;height: 25px;float: left;text-align: center;border-bottom: 1px solid #AAAAAA;font-weight: bold; }
+main .shenti .shen-r .shen-rup li:hover{background:url(../images/hongsj.jpg) no-repeat left 18px;}
+main .shenti .shen-r .shen-rup li:hover a{text-decoration:none;color: #f00;}
+main .shenti .shen-r .shen-rdown dl{width: 199px; height: 152px;float: left;text-align: center;border-right:1px solid #F6F6F6; border-bottom:1px solid #F6F6F6;}
+main .shenti .shen-r .shen-rdown dl dt img{width: 80px;transition: 1.5s;}
+main .shenti .shen-r .shen-rdown dl:hover dt img{transform:rotate(30deg);}
+main .shenti .shen-r .shen-rdown dl dd{font-weight: bold;font-size: 14px;padding: 0 15px;text-align: left;}
+main .shenti .shen-r .shen-rdown dl dd:nth-of-type(2){color: #c00;}
+
+main .mianbu .shen-l{background: #FFC2D2;}
+main .mianbu .shen-l .shen-up li{background: #F53969;}
+
+main .xifa .shen-l{background: #DD65F8;}
+main .xifa .shen-l .shen-up li{background: #D243F5;}
+
+main .kouqing .shen-l{background: #7EC2FF;}
+main .kouqing .shen-l .shen-up li{background: #64C0BF;}
+
+main .xiangshui .shen-l{background: #F55A8C;}
+main .xiangshui .shen-l .shen-up li{background: #FA2A6E;}
+
+main .nvxing .shen-l{background: #FEC53A;}
+main .nvxing .shen-l .shen-up li{background: #F9B200;}
