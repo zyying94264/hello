@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div,body{margin: 0;padding: 0;}
+    #small,#big{float: left;}
+    #small img{width: 400px;height: 250px;}
+    #big img{width: 800px;height: 500px; position: absolute;top: 0;left: 0;}
+    #small{width: 400px;height: 250px;position: relative;}
+    #big{width: 400px;height: 250px;overflow: hidden;position: relative;
+    display: none;}
+    #small #drag{width: 200px;height: 125px;background:rgba(192,188,176,0.4);position: absolute;left: 0;top: 0;display: none;}
+    </style>
+</head>
+<body>
+<div id="small">
+    <img src="images/bg4.jpg">
+    <div id="drag"></div>
+    <div id="mask"></div>
+</div>
+<div id="big">
+    <img src="images/bg4.jpg">
+</div>
+<script>
+var oSmall=document.getElementById("small");
+var oDrag=document.getElementById("drag");
+var oBig=document.getElementById("big");
+var oBigimg=oBig.getElementsByTagName("img")[0];
+
+oSmall.onmousemove=function(ev){
+    oDrag.style.display="block";
+    e=ev||window.event;
+    //实现鼠标在滑块中间
+    var left=e.clientX-oDrag.offsetWidth/2;
+    var top=e.clientY-oDrag.offsetHeight/2;
+    //保证拖拽块在small范围内移动
+    if(left<=0) left=0;
+    if(top<=0) top=0;
+    var maxY=oSmall.offsetHeight-oDrag.offsetHeight;
+    var maxX=oSmall.offsetWidth-oDrag.offsetWidth;
+    if(left>=maxX) left=maxX;
+    if(top>=maxY) top=maxY;
+    //实现鼠标移动滑块
+    oDrag.style.left=left+"px";
+    oDrag.style.top=top+"px";
+    oBig.style.display="block";
+    //放大部分
+    //大图小图实现等比例
+    var scaleX=left/maxX;
+    var scaleY=top/maxY;
+    oBigimg.style.left=-scaleX*(oBigimg.offsetWidth-oBig.offsetWidth)+"px";
+    oBigimg.style.top=-scaleY*(oBigimg.offsetHeight-oBig.offsetHeight)+"px";
+}
+oSmall.onmouseout=function(){
+    oBig.style.display="none";
+    oDrag.style.display="none";
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>
