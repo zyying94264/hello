@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="images/t1.jpg" alt="" id="pic">
+    <script>
+        var oPic=document.getElementById("pic");
+        tu=['t1.jpg','t3.jpg','t7.jpg','t4.jpg','t6.jpg','t5.jpg']; 
+        var i=0;
+        oPic.onclick = function(){
+            oPic.src="images/"+tu[i];
+            i++;
+            if(i==5) i=0;
+        }
+    </script>
+</body>
+</html>
