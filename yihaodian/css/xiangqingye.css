@@ -1,7 +1,7 @@
 @charset "utf-8";
 header .big{height:500px;}
 header .big .logo img{width: 200px;}
-header .big .logo .xlfenlei{width: 200px; text-align: center;background:url(../images/xl-fenlei.jpg) no-repeat 155px 12px #FF4040;color: #fff;margin-right: 10px;line-height: 40px;font-size: 14px;position: relative;}
+header .big .logo .xlfenlei{width: 200px; text-align: center;background:url(../images/xl-fenlei.jpg) no-repeat 155px 12px #FF4040;color: #fff;margin-right: 10px;line-height: 40px;font-size: 14px;position: relative;z-index: 100;}
 header .big .logo .xlfenlei:hover .fen-list{display:block;}
 header .xlfenlei .fen-list{width:175px;height:420px;background: #434343;position: absolute;margin-left: 15px; display: none;}
 header .xlfenlei .fen-list li{width: 175px;text-align: center; height:35px;line-height: 35px;}
@@ -13,13 +13,19 @@ header .xlfenlei .fen-list li:hover a{color:#999;text-decoration: none;}
 main{width: 100%;overflow: hidden; margin-top: -360px;}
 main .xijie{width: 100%;overflow: hidden;}
 main .bg img{height: 5px;width: 100%;}
-main .xq-left{width:250px; height:350px;margin-top: 30px;}
-main .xq-left .big{width:270px;height: 270px;border: 1px solid #999;}
-main .xq-left .big img{width:240px;height: 240px;padding: 15px;}
+main .xq-left{width:250px; height:350px;margin-top: 30px;position: relative;}
+main .xq-left #big{width:270px;height: 270px;border: 1px solid #999;position: relative;}
+main .xq-left #big img{width:240px;height: 240px;padding: 15px;}
+/* main .xq-left #big #darg{width: 120px;height:120px;background:rgba(192,188,176,.8);position: absolute;top: 0;left: 0;z-index: 100;}
+main .xq-left #big #mask{ width:100%; height: 100%; background:rgba(255,0,0,0); position: absolute; left: 0; top: 0; }
+main .xq-left #zhanshi{width: 240px; height: 240px; overflow:hidden;position: relative; }
+main .xq-left #zhanshi img{width: 480px;height: 480px;}
+main .xq-left #zhanshi{float: left;} */
 
-main .xq-left .little{width:270px;height: 52px; margin-top:5px; }
-main .xq-left .little li{float: left;margin-left:2px;width: 50px;height: 50px;border: 1px solid #fff;}
-main .xq-left .little li:hover{border: 1px solid #ccc;}
+main .xq-left #little{width:270px;height: 52px; margin-top:5px; }
+main .xq-left #little img{width: 50px;height: 50px;}
+main .xq-left #little li{float: left;margin-left:2px;width: 50px;height: 50px;border: 1px solid #fff;}
+main .xq-left #little li:hover{border: 1px solid #ccc;}
 main .xq-con{width: 530px;height:350px;margin-left: 35px;margin-top: 30px;}
 main .xq-con .miaoshu{font-size: 16px;font-weight: bold;padding:5px 20px;text-indent: 2em;}
 main .xq-con .miaoshu a{color:#000;}

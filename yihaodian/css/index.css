@@ -1,16 +1,22 @@
 @charset "utf-8";
 
-header .up{width: 100%;height:80px;position: relative;background:url(../images/bg.jpg) no-repeat center top; transition:1s;}
-header .up:hover{height:250px;background:url(../images/header-big.jpg) no-repeat center top;}
-header .up .cha{color: #fff;font-weight: bold;float: right; margin-right: 5%;font-size: 16px;}
+header #up{width: 100%;position:relative;}
+header #up #itop{height:80px;display: none;}
+header #up #cha{color: #fff;font-weight: bold;float: right; margin-right: 5%;font-size: 16px;cursor: pointer;}
 header .dingwei{position: absolute;right:0;top:0;}
 
-
+/*弹出层设置*/
+#di{width: 100%;height:4700px;position: relative;}
+#di #mask{width: 100%;height:4700px;position: absolute;top: 0;left: 0;
+    background: rgba(0,0,0,0.3);}
+#tanchu{width: 550px;height: 320px;position: relative;position: absolute;top: 200px;left:380px;}
+#tanchu #tcha{color: #FF3B46;position: absolute;top: 0;right: 0;font-size: 40px;}
+#tanchu #tcha:hover{cursor: pointer;}
 /*main开始*/
-main{width: 100%;overflow: hidden; padding-top: 25px;background-color:#F5F5F5;overflow: hidden;}
+main{width: 100%;overflow: hidden; padding-top: 25px;background-color:#F5F5F5;overflow: hidden;position: relative;}
 main .huodong{overflow: hidden;height: 400px;}
 main .huodong .shangou{width:240px;height: 370px;position: relative;margin-right: 25px;}
-main .huodong .shangou img{width:240px;height: 370px; }
+main .huodong .shangou img{width:240px;height: 370px;}
 main .huodong .shangou .s-kuang{width:130px;height: 100px;background: #EDD2D2;position: absolute; left: 55px;bottom: 30px;font-size: 14px;font-weight: bold;text-align: center;}
 main .huodong .shangou .s-kuang .line{width: 15px;height:2px;border-bottom:1px solid #999;margin: auto;margin: 10px auto;}
 main .huodong .shangou .s-kuang p{margin-top: 10px;}
@@ -22,18 +28,17 @@ main .huodong .tuangou dd{float: left;}
 main .huodong .tuangou dd:nth-of-type(2){width:170px;margin-top:40px;  margin-bottom: 3px;border-bottom: 1px solid #F0F0F0;}
 main .huodong .tuangou dd:nth-of-type(2) img{padding-left: 40px;}
 main .huodong .tuangou dd:nth-of-type(3) img{padding-left:40px;}
-
 main .huodong .tuangou dd p{padding-left: 20px;}
 main .huodong .tuangou dd p:first-child{color:#F16F71;}
-
-
+main .huodong .tuangou dd img:hover{transform:translateX(30px);transition: 2s;}
 main .huodong .paihang {width:350px;height:370px;background:#fff url(../images/h-bg.png) no-repeat left top; border-top:1px solid #FC9C80;position: relative;margin-left: 25px;}
 main .huodong .paihang dt{position: absolute;left:90px;top: -10px;}
 main .huodong .paihang span a{padding-left: 280px;font-size: 12px;color: #A7A2A3;}
 main .huodong .paihang dd{width: 100%;margin-top:10px;}
 main .huodong .paihang dd li{float: left;padding: 10px;}
-main .huodong .paihang .p-list{width: 100% height: 280px;}
-main .huodong .paihang .p-list li{float: left;padding-left: 3px;}
+main .huodong .paihang .p-list{width: 100% ;height:280px;}
+main .huodong .paihang .p-list li{float: left;padding-left: 3px;perspective: 100px;}
+main .huodong .paihang .p-list li:hover img{transform: translateZ(30px) scale(0.8);transition: 2s;}
 main .huodong .paihang .p-list li:hover{cursor: pointer;}
 
 main .huodong .shangou,.tuangou,.paihang{margin-top: 20px;} 
@@ -77,7 +82,7 @@ main .quan-con dd:nth-child(4){border-left: 1px solid #05397C;}
 main .quan-con dd:nth-child(5){border-left: 1px solid #05397C;}
 
 main .quan-right{width:190px; height: 350px;margin-top: 20px;}
-main .quan-right dl{width:95px;height: 116px;float: left;background-color: #004;}
+main .quan-right dl{width:95px;height: 116px;float: left;background-color: #004;transition:1s;}
 main .quan-right dl:nth-child(1){background-color: #FFE6EE;}
 main .quan-right dl:nth-child(1) dt{color:#F26291; }
 main .quan-right dl:nth-child(1) dd:nth-of-type(2) {background:#F26291; }
@@ -107,18 +112,23 @@ main .quan-right dl:hover{transform: scale(1.1); cursor: pointer;}
 /*国产开始*/
 main .guochan { overflow: hidden; margin-top: 20px;}
 main .guochan .g-left{width:220px; height:400px;background:url(../images/guochan-bg.jpg) repeat-x center center;background-size: cover;}
-main .guochan .g-left h2{width: 85px;height: 25px; font-size:16px;color: #fff;border-bottom: 1px solid #fff;margin: 0 auto;text-align: center;padding-top: 20px;}
-main .guochan .g-left h4{text-align: center;color:#fff;padding-top: 5px; }
+main .guochan .g-left h2{width: 85px;height: 25px; font-size:16px;border-bottom: 1px solid #fff;margin: 0 auto;text-align: center;padding-top: 20px;}
+main .guochan .g-left h2 a{color: #fff;}
+main .guochan .g-left a:hover{text-decoration: none;}
+main .guochan .g-left h4{text-align: center;padding-top: 5px; }
+main .guochan .g-left h4 a{color:#fff;}
 main .guochan .g-left .g-box{width: 180px;height: 230px;margin: 0 auto;background: #fff;border-radius: 10px;}
 main .guochan .g-left .g-box p{text-align: center;padding-top: 6px;margin-top: 10px;}
 main .guochan .g-left .g-box p:first-child{color: #F88F51;font-size: 14px;}
 main .guochan .g-left .g-box img{width: 160px;padding: 0 15px;}
 main .guochan .g-left .g-box a:hover{text-decoration: none;}
-main .guochan .g-left .ye{color: #fff;text-align: center;letter-spacing: 3px;margin: 10px;}
+main .guochan .g-left .ye{color: #fff;letter-spacing: 3px;margin: 10px;
+width: 220px;padding-left: 65px;}
+main .guochan .g-left .ye span:hover{cursor: pointer;}
+main .guochan .g-left .ye span{padding-right: 10px;}
 main .guochan .g-left .touming{width: 100%; height: 30px;background:rgba(255,255,255,0.2);text-align: center;line-height: 30px;margin-top:29px;}
 main .guochan .g-left .touming  img{vertical-align:middle;}
 main .guochan .g-left .touming a{color: #fff;}
-
 main .guochan .g-mid{width:620px;height: 400px;background-color: #fff;}
 main .guochan .g-mid .g-up{width: 100%;height: 25px;line-height: 25px;border-bottom: 1px solid #F5F5F5;padding:5px 0;}
 main .guochan .g-mid .g-up li{float: left;width:70px;height: 25px;}
@@ -202,3 +212,9 @@ main .muying-weichu .jiu dl dd p:nth-child(2){color:#6CC8FF;}
 main .sheng-jiu .jiu dl dt li{background:#6CC8FF;}
 main .sheng-jiu .jiu dl dt .s-line{background:#CCCCCC;}
 
+main #side{width: 40px;background: #fff;position: fixed;top:50px;left:10px;display: none;}
+main #side li{height: 48px;width: 38px;border: 1px solid #963752;font: 15px/25px "微软雅黑";margin-top: -1px;text-align: center;}
+main #side li a{color:#F26291;}
+main #side li a:hover{text-decoration: none;}
+main #side li:hover{background: brown;}
+main #side li:hover a{color: #fff;}

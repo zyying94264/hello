@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 #banner{background: #FFC9C7;}
-
-
 main{width: 100%;overflow:hidden;background-color: #F3F3F3;}
 main .q-up h2{font-weight: normal;font-size: 1.7em;padding: 30px 0;color:#6A574B;}
 main .q-up h2 span{font-size: 14px;padding-left:10px;}
@@ -12,13 +10,13 @@ main .quanqiu .q-down dl dt img{width: 140px;padding: 29px 0 0 29px;transition: 
 main .quanqiu .q-down dl dt:hover img{transform: translate(0,-4px);}
 main .quanqiu .q-down dl dd{text-align: center;}
 main .quanqiu .q-down dl dd:nth-of-type(1){font-weight: bold;}
+main .quanqiu .q-down dl dd:nth-of-type(1):hover{color: brown;}
 main .quanqiu .q-down dl dd:nth-of-type(2){color: #f00;font-weight: bold;padding: 3px 0;font-size: 14px;}
 main .quanqiu .q-down dl dd:nth-of-type(3){color:#B3BACC;}
-main .quanqiu .q-down dl dd:nth-of-type(4){width: 80px;height: 25px;line-height: 25px;background:#FE5656;margin: 15px auto;border-radius:13px;}
+main .quanqiu .q-down dl dd:nth-of-type(4){width: 80px;height: 25px;line-height: 25px;background:#FE5656;margin: 15px auto;border-radius:13px;transition: 1s;}
 main .quanqiu .q-down dl dd:nth-of-type(4) a{color: #fff;}
 main .quanqiu .q-down dl dd:hover a{text-decoration: none;}
-
-
+main .quanqiu .q-down dl dd:nth-of-type(4):hover{transform:scale(1.2);}
 main .guojia .g-down{width:100%;overflow: hidden;}
 main .guojia .g-down li{float: left;width:198px;}
 main .guojia .g-down li img{width: 205px;}

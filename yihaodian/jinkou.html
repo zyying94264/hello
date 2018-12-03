@@ -5,6 +5,15 @@
 	<title>全球进口</title>
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/jinkou.css">
+	<link rel="stylesheet" href="css/wow.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<script src="js/aos.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+			window.onload=function(){
+				new WOW().init();//初始化
+			}
+	</script>
 </head>
 <body>
 <header>
@@ -59,7 +68,7 @@
 					</div>
 				</div>	
 				<div class="che">
-					购物车
+					<a href="gouwu.html"> 购物车</a>
 				</div>
 			</div>
 		</nav>
@@ -69,11 +78,11 @@
 			<div class="left-box fl">
 				<ul>
 					<li><a href="#">全球进口</a></li>
-					<li><a href="#">食品 / 酒 / 生鲜</a></li>
-					<li><a href="#"> 母婴 / 玩具 / 童装</a></li>
+					<li><a href="shengxian.html">食品 / 酒 / 生鲜</a></li>
+					<li><a href="gehu.html">  美妆 / 个人清洁 </a></li>
 					<li><a href="#"> 纸巾 / 厨卫清洁 / 宠物</a></li>
 					<li><a href="#"> 家居家纺 / 厨具 / 家具</a></li>
-					<li><a href="#"> 美妆 / 个人清洁</a></li>
+					<li><a href="#"> 母婴 / 玩具 / 童装</a></li>
 					<li><a href="#"> 女装 / 男装 / 内衣 / 珠宝</a></li>
 					<li><a href="#">鞋靴 / 箱包 / 运动户外</a></li>
 					<li><a href="#"> 手机 / 数码 / 电脑办公</a></li>
@@ -95,8 +104,8 @@
 			</div>
 			<div class="q-down">
 				<dl>
-					<dt><img src="images/quan-bai.jpg"></dt>
-					<dd><a href="#">日本进口 白色恋人 北海道 巧克力夹心威化饼干6枚 美冬系列三种口味 礼盒144g</a>
+					<dt><a href="xiangqingye.html"><img src="images/quan-bai.jpg"></a></dt>
+					<dd><a href="xiangqingye.html">日本进口 白色恋人 北海道 巧克力夹心威化饼干6枚 美冬系列三种口味 礼盒144g</a>
 					 </dd>
 					<dd> ¥89.00</dd>
 					<dd>参考价：¥128.00</dd>
@@ -184,13 +193,13 @@
 				<h2>国家地区馆<span>NATIONAL PAVILION</span></h2>
 			</div>
 			<ul class="g-down">
-				<li><a href="#"><img src="images/di-l1.jpg"></a></li>
-				<li><a href="#"><img src="images/di-l2.jpg"></a></li>
-				<li><a href="#"><img src="images/di-l3.png"></a></li>
-				<li><a href="#"><img src="images/di-r1.jpg"></a></li>
-				<li><a href="#"><img src="images/di-r2.jpg"></a></li>
-				<li><a href="#"><img src="images/di-r3.jpg"></a></li>
-				<li><a href="#"><img src="images/di-r4.jpg"></a></li>
+				<li><a href="#"><img src="images/di-l1.jpg" class="wow lightSpeedIn"data-wow-delay:200 ></a></li>
+				<li><a href="#"><img src="images/di-l2.jpg" class="wow flipInX"></a></li>
+				<li><a href="#"><img src="images/di-l3.png" class="wow rollIn"></a></li>
+				<li><a href="#"><img src="images/di-r1.jpg"  class="wow swing"></a></li>
+				<li><a href="#"><img src="images/di-r2.jpg"  class="wow swing"></a></li>
+				<li><a href="#"><img src="images/di-r3.jpg"  class="wow swing"></a></li>
+				<li><a href="#"><img src="images/di-r4.jpg" class="wow swing"></a></li>
 			</ul>
 			
 
@@ -203,7 +212,7 @@
 				<h2>品牌直达<span>NATIONAL PAVILION</span></h2>
 			</div>
 			<div class="p-down">
-				<dl>
+				<dl aos="fade-right">
 					<dt><a href="#"><img src="images/pin1.jpg"></a></dt>
 					<dd>
 						<h3>依云天然矿泉水</h3>
@@ -211,7 +220,7 @@
 						<h4>源自法国阿尔卑斯</h4>
 					</dd>
 				</dl>
-				<dl>
+				<dl aos="fade-up">
 					<dt><a href="#"><img src="images/pin2.jpg"></a></dt>
 					<dd>
 						<h3>依云天然矿泉水</h3>
@@ -219,7 +228,7 @@
 						<h4>源自法国阿尔卑斯</h4>
 					</dd>
 				</dl>
-				<dl>
+				<dl aos="fade-down">
 					<dt><a href="#"><img src="images/pin5.jpg"></a></dt>
 					<dd>
 						<h3>依云天然矿泉水</h3>
@@ -227,7 +236,7 @@
 						<h4>源自法国阿尔卑斯</h4>
 					</dd>
 				</dl>
-				<dl>
+				<dl aos="fade-up">
 					<dt><a href="#"><img src="images/pin3.jpg"></a></dt>
 					<dd>
 						<h3>依云天然矿泉水</h3>
@@ -235,7 +244,7 @@
 						<h4>源自法国阿尔卑斯</h4>
 					</dd>
 				</dl>
-				<dl>
+				<dl aos="fade-left">
 					<dt><a href="#"><img src="images/pin4.jpg"></a></dt>
 					<dd>
 						<h3>依云天然矿泉水</h3>
@@ -243,8 +252,6 @@
 						<h4>源自法国阿尔卑斯</h4>
 					</dd>
 				</dl>
-
-
 			</div> 
 				
 		</div>
@@ -513,6 +520,12 @@
 			</div>
 		</div>
 </footer>
+<script>
+		AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
 	
+	</script>	
 </body>
 </html>

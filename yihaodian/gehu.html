@@ -5,6 +5,15 @@
 	<title>个人护理活动专场</title>
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/gehu.css">
+	<link rel="stylesheet" href="css/wow.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<script src="js/aos.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+			window.onload=function(){
+				new WOW().init();//初始化
+			}
+	</script>
 </head>
 <body>
 	<header>
@@ -32,25 +41,22 @@
 					</div>
 				</div>	
 				<div class="che">
-					购物车
+					<a href="gouwu.html"> 购物车</a>
 				</div>
 			</div>
 		</nav>
 	</header>
 	<div id="banner">
-		<div class="center">
-			<div class="zhuti fl">
-			</div>
-		</div>	
+		<img src="images/gehu-banner.jpg" id="banner">
 	</div>	
 	<main>
 		<div class="center">
 			<ul class="fenlei">
-				<li><a href="#"><img src="images/fenlei1.jpg"></a></li>
-				<li><a href="#"><img src="images/fenlei2.jpg"></a></li>
-				<li><a href="#"><img src="images/fenlei3.jpg"></a></li>
-				<li><a href="#"><img src="images/fenlei4.jpg"></a></li>
-				<li><a href="#"><img src="images/fenlei5.jpg"></a></li>
+				<li><a href="#"><img src="images/fenlei1.jpg" aos="fade-left"></a></li>
+				<li><a href="#"><img src="images/fenlei2.jpg" aos="fade-up"></a></li>
+				<li><a href="#"><img src="images/fenlei3.jpg" aos="fade-right"></a></li>
+				<li><a href="#"><img src="images/fenlei4.jpg" aos="fade-down"></a></li>
+				<li><a href="#"><img src="images/fenlei5.jpg" aos="fade-left"></a></li>
 			</ul>
 			<div class="topb"><img src="images/top-bangdan.jpg"></div>
 			<div class="shenti">
@@ -678,17 +684,6 @@
 
 
 	</main>
-
-
-
-
-
-
-
-
-
-
-
 	<footer>
 		<div class="center">
 			<div class="f-up">
@@ -761,5 +756,12 @@
 			</div>
 		</div>
 </footer>
+<script>
+		AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+	
+	</script>
 </body>
 </html>

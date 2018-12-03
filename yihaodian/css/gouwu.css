@@ -15,46 +15,104 @@ header .big .look .look-up input{width:298px;height:35px;border:none; background
 /*main*/
 main{width: 100%;overflow: hidden; background: #F8F8F8;}
 main .che-up{overflow: hidden;}
-main .che{width: 100%; padding-top: 20px;margin-bottom: 10px;height: 880px;}
+main .che{width: 100%; padding-top: 10px;margin-bottom: 10px;height: 880px;}
 main .che .quanxuan{width:100%;height: 40px; border: 1px solid #DFDFDF;border-radius: 8px;line-height: 40px;background-color: #fff;}
-main .che .quanxuan dt{background:url(../images/kuang.jpg) no-repeat left center;text-indent: 3em;margin-left: 20px;position: relative;}
+main .che .quanxuan dt{position: relative;}
 main .che .quanxuan dt img{position: absolute; left: 7px ;top: 13px;display: none;}
 main .che .quanxuan dt:hover img{display: block;}
 main .che .quanxuan dd{float: left;margin-left: 100px;}
 
+main .che .dianming{width:100%;height: 40px; border: 1px solid #DFDFDF;border-radius: 8px;line-height: 40px;background-color: #fff;margin-top: 25px;}
+main .che input[type="checkbox"]{
+    -webkit-appearance: none;
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    background: #fff url(../images/gou.jpg) no-repeat;
+    margin: 5px 10px;
+}
+main .che  input[type="checkbox"]:checked{
+    background-position: -48px;
+    outline: none;
+}
+main .che #meili{width: 100%;overflow:hidden;border: 1px solid #DFDFDF;margin: 20px 0;border-radius: 8px;background-color: #fff;}
+main .che #meili #m-list{width:100%;height:400px;}
+main .che #meili #m-list .change{background:#FFF7F7;}
+main .che #meili #m-list .shangpin{width:100%;height:120px;background: #fff;border-bottom: 1px dashed #ccc;padding-top: 20px;}
 
-main .che .meili{width: 100%;overflow: hidden;border: 1px solid #DFDFDF;margin-top: 20px;border-radius: 8px;background-color: #fff;}
-main .che .meili dl{width:100%;height: 40px; line-height: 40px;border-bottom:1px solid #DFDFDF; }
-main .che .meili dt{background:url(../images/kuang.jpg) no-repeat left center;text-indent: 3em;margin-left: 20px;position: relative;}
-main .che .meili dt img{position: absolute; left: 7px ;top: 13px;display: none;}
-main .che .meili dt:hover img{display: block;}
-main .che .meili dd{float: left;margin-left: 100px;}
+main .che #meili #m-list .shangpin span:nth-child(2) .c{
+    width: 75px;height: 75px;
+    vertical-align: middle;
+}
+main .che #meili #m-list .shangpin span:nth-child(3) {
+    display:inline-block;
+    width: 250px;
+    height: 80px;   
+}
+main .che #meili #m-list .shangpin span:nth-child(3) .product-name{
+    display:inline-block;
+    width: 250px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 20px;
+}
+main .che #meili #m-list .shangpin span:nth-child(3) .product-select{
+    display:inline-block;
+    width: 250px;
+    height: 20px;
 
-main .meili .shangpin{width: 100%;overflow: hidden;background: #;}
-main .meili .shangpin:hover{background: #FFF7F7;}
-main .meili .shangpin .kuang{width: 30px;height: 30px; background:url(../images/kuang.jpg) no-repeat center center;margin:50px 20px ;position: relative;}
-main .meili .shangpin .kuang img{position: absolute;left: 7px;top: 7px;display: none;}
-main .meili .shangpin .kuang:hover img{display: block;  }
+}
+main .che #meili #m-list .shangpin span:nth-child(3) .product-xuan{
+    color: #ccc;
+    text-indent: 20px;
+    border: 1px dashed #999
+    
+}
+main .che #meili #m-list .shangpin span{padding: 0 10px;}
+main .che #meili #m-list .shangpin span:nth-child(4){
+    padding-left: 100px;
 
-main .meili .shangpin .heng{width:800px;height:90px;margin: 30px;}
-main .meili .shangpin .heng li:nth-child(1){width: 400px; height: 300px;}
-main .meili .shangpin .heng li:nth-child(1) img{float: left;margin-right:20px; transition: 1.5s;width: 75px;height: 75px;}
-main .meili .shangpin .heng li:nth-child(1):hover img{transform: rotate(360deg) scale(0.7);}
-main .meili .shangpin .heng li span{float: left;width: 300px;}
-main .meili .shangpin .heng li span:nth-of-type(1) a{color:#000;font-weight: bold;}
-main .meili .shangpin .heng li span:nth-of-type(2){text-indent: 2em;margin-top: 5px;background:url(../images/tian7.jpg) no-repeat left center;width: 200px;}
-main .meili .shangpin .heng li span:nth-of-type(2):hover{border:1px dotted #f00;}
-main .meili .shangpin .heng li{float: left;}
+    display: inline-block;
+    width: 20px;
+}
+main .che #meili #m-list .shangpin span:nth-child(5){
+    padding: 0 60px;
+    display: inline-block;
+}
+main .che #meili #m-list .shangpin span:nth-child(5) a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+}
+main .che #meili #m-list .shangpin span:nth-child(5) input{
+    display: inline-block;
+    width: 25px;
+    padding:-3px;
+    margin: 0;
+    text-align: center;
+    outline: none;
+}
+main .che #meili #m-list .shangpin span:nth-child(6){
+    font-weight: bold;
 
-main .meili .shangpin .heng li:nth-child(2){width:100px;text-align: center;font-size: 12px;color: #000;margin-top: 5px;margin-left:30px;}
-main .meili .shangpin .heng li:nth-child(3){width: 70px;border: 1px solid #DFDFDF;margin-top: 5px;margin-left:30px;}
-main .meili .shangpin .heng li:nth-child(3) div{width: 22px;float: left;text-align: center;}
-main .meili .shangpin .heng li:nth-child(3) div{border-right: 1px solid  #DFDFDF;}
-main .meili .shangpin .heng li:nth-child(3) div:nth-child(3){border:none;}
-main .meili .shangpin .heng li:nth-child(4){font-size: 10px;color: #000;padding-left: 40px;} 
-main .meili .shangpin .heng li:nth-child(5){padding: 15px;}
-main .meili .jiage{width:100%;height: 40px; line-height: 40px;border-top:1px solid #DFDFDF;text-align: right;font-size: 14px;}
-main .meili .jiage span{color: #f00;font-weight: bold;}
+}
+main .che #meili #m-list .shangpin span:nth-child(7){
+    padding: 0 25px;
+}
+main .che #meili #m-list .shangpin span:nth-child(7) a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
 main .jiesuan{width:100%;height:60px;background-color: #fff;}
 main .jiesuan dl{padding-top: 20px;}
 main .jiesuan dl dt img{vertical-align: middle;padding-right: 10px;}

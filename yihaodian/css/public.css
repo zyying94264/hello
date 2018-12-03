@@ -53,10 +53,11 @@ header .big .sou .nav-down {width: 610px; margin-top: 18px;}
 header .big .sou .nav-down li{float: left;font-size: 15px;padding-left:10px;font-weight: bold;}
 header .big .sou .nav-down li:hover a{color:#FF4040;text-decoration: none; }
 header .big .che{width: 100px;height: 40px;text-indent:2em;line-height: 40px;border:1px solid #E0E0E0;background:url(../images/che.gif) no-repeat 8px -8px; background-size:20px;font-size: 18px;margin-top: 40px; margin-left: 20px;}
+header .big .che:hover{cursor: pointer;}
+header .big .che a:hover{text-decoration: none;}
 
 /*banner开始*/
-
-#banner{width: 100%;height:420px;background:url(../images/banner-left.jpg) repeat-x;}
+#banner{width: 100%;height:420px;background:url(../images/banner-left.jpg)  repeat-x;}
 #banner .left-box{width:175px;height:420px;background: #434343; }
 #banner .left-box li{width: 175px; text-indent: 3em; height:35px;line-height: 35px;}
 #banner .left-box li:nth-child(1){background:url(../images/t1.jpg) no-repeat 7px center;}
@@ -72,23 +73,26 @@ header .big .che{width: 100px;height: 40px;text-indent:2em;line-height: 40px;bor
 #banner .left-box li:nth-child(11){background:url(../images/t11.jpg) no-repeat 7px center;}
 #banner .left-box li:nth-child(12){background:url(../images/t12.jpg) no-repeat 7px center;}
 #banner .left-box li a{color: #fff;}
-#banner .left-box li:hover{background:#fff;}
-#banner .left-box li:hover a{color:#999;text-decoration: none;}
-#banner .zhuti{width: 800px;height: 420px; position: relative;}
-#banner .zhuti img{width: 820px;height:420px;}
+#banner .left-box li:hover{background:#fff;cursor: pointer;}
+#banner .left-box li:hover a{color:#666;text-decoration: none;}
+#banner .zhuti{width: 800px;height: 420px; position: relative;overflow: hidden;}
+#banner .zhuti #lunbo img{width: 800px;height:420px;display:none;}
+#banner .zhuti #lunbo img.on{width: 800px;height:420px;display: block;}
 #banner .zhuti .denglu{width:180px;height: 253px;background:url(../images/vip_bg2.png) no-repeat center center; position: absolute; right: 20px;top: 120px;}
-#banner .zhuti .touxiang{width: 80px;height: 80px;border:2px solid #C2C4CA;overflow: hidden;border-radius: 50%;margin: 0 auto;}
+#banner .zhuti  .touxiang{width: 80px;height: 80px;border:2px solid #C2C4CA;overflow: hidden;border-radius: 50%;margin: 0 auto;}
 #banner .zhuti .touxiang img{width: 80px;height: 80px;}
 #banner .zhuti .denglu p{width:58px; margin:4px auto;text-align:center;}
-#banner .zhuti .denglu button{width: 70px;height: 30px;border-radius:15px;
-border: 1px solid #FF8787;background: #fff;color: #FF4547;margin-left:12px;margin-bottom: 10px;}
+#banner .zhuti .denglu button{width: 70px;height: 30px;border-radius:15px;border: 1px solid #FF8787;background: #fff;color: #FF4547;margin-left:12px;margin-bottom: 10px;}
+#banner .zhuti .denglu button:hover{background: #FF4547;color: #fff;}
+
 #banner .zhuti .denglu span a{padding-top: 3px;}
+#banner .zhuti .denglu button:hover{cursor: pointer;}
 #banner .zhuti .denglu span:hover a{color:#FF4547;text-decoration: none;}
 
 
 main .guding{width:34px;height:502px;position: fixed; right: 0;bottom: 0;background: #303030;}
-main .guding img{padding-left:3px; }
-main .guding .gwche{height: 120px;background: #454545;}
+main .guding img{padding-left:3px;display: block;}
+main .guding .gwche{width: 34px; height: 120px;margin-top:9px; background: #454545;}
 main .guding .gwche span{width: 16px; padding: 2px 7px;display: block;}
 main .guding .gwche a{color: #fff;}
 main .guding .gwche a:hover{text-decoration: none;}

@@ -5,7 +5,15 @@
 	<title>日本进口 白色恋人</title>
 	<link rel="stylesheet" href="css/public.css">
 	<link rel="stylesheet" href="css/xiangqingye.css">
-
+	<link rel="stylesheet" href="css/wow.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<script src="js/aos.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+			window.onload=function(){
+				new WOW().init();//初始化
+			}
+	</script>
 </head>
 <body>
 	<header>
@@ -30,17 +38,17 @@
 				<div class="xlfenlei">
 					所有商品分类
 					<ul class="fen-list">
-						<li><a href="#">全球进口</a></li>
-						<li><a href="#">食品 / 酒 / 生鲜</a></li>
-						<li><a href="#"> 母婴 / 玩具 / 童装</a></li>
+						<li><a href="jinkou.html">全球进口</a></li>
+						<li><a href="shengxian.html">食品 / 酒 / 生鲜</a></li>
+						<li><a href="gehu.html"> 美妆 / 个人清洁</a></li>
 						<li><a href="#"> 纸巾 / 厨卫清洁 / 宠物</a></li>
 						<li><a href="#"> 家居家纺 / 厨具 / 家具</a></li>
-						<li><a href="#"> 美妆 / 个人清洁</a></li>
+						<li><a href="#"> 母婴 / 玩具 / 童装</a></li>
 						<li><a href="#"> 女装 / 男装 / 内衣 / 珠宝</a></li>
-						<li><a href="#">鞋靴 / 箱包 / 运动户外</a></li>
+						<li><a href="#"> 鞋靴 / 箱包 / 运动户外</a></li>
 						<li><a href="#"> 手机 / 数码 / 电脑办公</a></li>
 						<li><a href="#"> 家用电器 / 汽车用品</a></li>
-						<li><a href="#">医药/保健滋补/成人</a></li>
+						<li><a href="#"> 医药/保健滋补/成人</a></li>
 						<li><a href="#"> 图书</a></li>
 					</ul>
 
@@ -80,7 +88,7 @@
 					</div>
 				</div>	
 				<div class="che">
-					购物车
+					<a href="gouwu.html"> 购物车</a>
 				</div>
 			</div>
 		</nav>
@@ -90,13 +98,20 @@
 		<div class="center">
 			<div class="xijie">
 				<div class="xq-left fl">
-					<div class="big"><a href="#"><img src="images/qiao-big.jpg" alt=""></a></div>
-					<ul class="little">
-						<li><a href="#"><img src="images/lit (2).jpg"></a></li>
-						<li><a href="#"><img src="images/lit (5).jpg"></a></li>
-						<li><a href="#"><img src="images/lit (3).jpg"></a></li>
-						<li><a href="#"><img src="images/lit (1).jpg"></a></li>
-						<li><a href="#"><img src="images/lit (4).jpg"></a></li>		
+					<div id="big">
+						<a href="#">
+							<img src="images/img360 (1).jpg" alt="" id="da">
+						</a>
+						<div id="drag"></div>
+						<div id="mask"></div>
+					</div>
+					<!-- <div id="zhanshi fl"><img src="images/img600 (1).jpg"></div> -->
+					<ul id="little">
+						<li><a href="#"><img src="images/img360 (1).jpg"></a></li>
+						<li><a href="#"><img src="images/img360 (2).jpg"></a></li>
+						<li><a href="#"><img src="images/img360 (3).jpg"></a></li>
+						<li><a href="#"><img src="images/img360 (4).jpg"></a></li>
+						<li><a href="#"><img src="images/img360 (5).jpg"></a></li>		
 					</ul>
 				</div>
 				<div class="xq-con fl">
@@ -193,18 +208,18 @@
 						</p>
 					</div>
 					<div class="img-list">
-						<a href="#"><img src="images/xq-img1 (1).jpg" alt=""></a>
-						<a href="#"><img src="images/xq-img1 (2).jpg" alt=""></a>
-						<a href="#"><img src="images/xq-img1 (3).jpg" alt=""></a>
-						<a href="#"><img src="images/xq-img1 (4).jpg" alt=""></a>
-						<img src="images/xq-img2 (1).jpg">
-						<img src="images/xq-img2 (4).jpg">
-						<img src="images/xq-img2 (7).jpg">
-						<img src="images/xq-img2 (6).jpg">
-						<img src="images/xq-img2 (3).jpg">
-						<img src="images/xq-img2 (2).jpg">
-						<img src="images/xq-img3 (1).jpg">
-						<img src="images/xq-img3 (2).jpg">
+						<a href="#"><img src="images/xq-img1 (1).jpg" alt="" class="wow bounceIn"></a>
+						<a href="#"><img src="images/xq-img1 (2).jpg" alt="" aos="fade-down"></a>
+						<a href="#"><img src="images/xq-img1 (3).jpg" alt="" aos="fade-up"></a>
+						<a href="#"><img src="images/xq-img1 (4).jpg" alt="" aos="fade-right"></a>
+						<img src="images/xq-img2 (1).jpg" aos="fade-up">
+						<img src="images/xq-img2 (4).jpg" aos="fade-down">
+						<img src="images/xq-img2 (7).jpg" aos="fade-right">
+						<img src="images/xq-img2 (6).jpg" aos="fade-up">
+						<img src="images/xq-img2 (3).jpg" aos="fade-up">
+						<img src="images/xq-img2 (2).jpg" aos="fade-left">
+						<img src="images/xq-img3 (1).jpg" aos="fade-up">
+						<img src="images/xq-img3 (2).jpg" aos="fade-down">
 					</div>
 					<div class="msg">
 						<h3>1号店承诺</h3>
@@ -363,5 +378,13 @@
 			</div>
 		</div>
 </footer>
+<script src="js/xiangqing.js"></script>
+<script>
+		AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000
+			});
+	
+	</script>
 </body>
 </html>

@@ -38,167 +38,66 @@
 					<div class="look-up clearfix">
 						<input type="text" placeholder="请输入关键词">
 					</div>
-				</div>	
-				
+				</div>		
 			</div>
 		</nav>
 	</header>
 	<main>
 		<div class="center che-up">
 			<div class="che">
-				<dl class="quanxuan">
-					<dt class="fl"><img src="images/gou.jpg"><a href="#">全选</a></dt>
+				<dl class="quanxuan dianming">
+					<dt class="fl"><input type="checkbox" class="kuang"><a href="#">全选</a></dt>
 					<dd>商品信息</dd>
 					<dd>单价（元）</dd>
 					<dd>数量</dd>
 					<dd>小计（元）</dd>
 					<dd>操作</dd>
 				</dl>
-				<div class="meili ">
-					<dl>
-						<dt class="fl">
-						<img src="images/gou.jpg">
-						<a href="#">壹玖美丽化妆品专营店</a>
-						</dt>				
-					</dl>
-					<div class="shangpin">
-						<div class="kuang fl"><img src="images/gou.jpg" alt=""></div>
-						<ul class="heng fl">
-							<li>
-								<img src="images/dior.jpg">
-								<span> <a href="#">迪奥（Dior） 【七夕情人节礼品】Dior迪奥口红女士唇膏 烈艳蓝金999+520（爱你久久）</a></span><br>
-								<span>  烈艳蓝金999+520（爱你久久）</span>
-							</li>
-							<li>
-								538.00
-							</li>
-							<li>
-								<div>-</div>
-								<div>1</div>
-								<div>+</div>
-							</li>
-							<li>
-								538.00 <br>
-								0.26kg
-							</li>
-							<li>
-								<a href="#"><img src="images/shoucang.jpg"></a>
-								<a href="#"><img src="images/del.jpg"></a>
-							</li>
-								 		
-						</ul>
-					</div>
-					<div class="jiage">
-						商品总价：<span>¥538</span>
-					</div>
-				</div>
-				<div class="meili ziying">
-					<dl>
-						<dt class="fl">
-						<img src="images/gou.jpg">
-						<a href="#">自营</a>
-						</dt>				
-					</dl>
-					<div class="shangpin">
-						<div class="kuang fl"><img src="images/gou.jpg" alt=""></div>
-						<ul class="heng fl">
-							<li>
-								<img src="images/gucci.jpg">
-								<span> <a href="#">古驰（GUCCI）罪爱女用淡香水 30ml（又名：古驰（GUCCI）罪爱女士淡香水 30ml ) 七夕情人节礼物</a></span><br>
-								<span>罪爱女  30ml</span>
-							</li>
-							<li>
-								469.00
-							</li>
-							<li>
-								<div>-</div>
-								<div>1</div>
-								<div>+</div>
-							</li>
-							<li>
-								469.00 <br>
-								0.28kg
-							</li>
-							<li>
-								<a href="#"><img src="images/shoucang.jpg"></a>
-								<a href="#"><img src="images/del.jpg"></a>
-							</li>
-								 		
-						</ul>
-					</div>
-					<div class="shangpin">
-						<div class="kuang fl"><img src="images/gou.jpg" alt=""></div>
-						<ul class="heng fl">
-							<li>
-								<img src="images/beihaidao.jpg">
-								<span> <a href="#">日本进口 白色恋人 北海道 巧克力夹心威化饼干6枚 美冬系列三种口味 礼盒144g</a></span><br>
-								<span></span>
-							</li>
-							<li>
-								89.00
-							</li>
-							<li>
-								<div>-</div>
-								<div>1</div>
-								<div>+</div>
-							</li>
-							<li>
-								89.00 <br>
-								0.28kg
-							</li>
-							<li>
-								<a href="#"><img src="images/shoucang.jpg"></a>
-								<a href="#"><img src="images/del.jpg"></a>
-							</li>
-								 		
-						</ul>
-					</div>
-					<div class="shangpin">
-						<div class="kuang fl"><img src="images/gou.jpg" alt=""></div>
-						<ul class="heng fl">
-							<li>
-								<img src="images/marc.jpg">
-								<span> <a href="#">莫杰（MARC JACOBS）雏菊女士香水50ml（又名：莫杰雏菊女士淡香氛）七夕情人节礼物</a></span><br>
-								<span>雏菊 50ml</span>
-							</li>
-							<li>
-								379.00
-							</li>
-							<li>
-								<div>-</div>
-								<div>2</div>
-								<div>+</div>
-							</li>
-							<li>
-								379.00 <br>
-								0.28kg
-							</li>
-							<li>
-								<a href="#"><img src="images/shoucang.jpg"></a>
-								<a href="#"><img src="images/del.jpg"></a>
-							</li>
-								 		
-						</ul>
-					</div>
-					<div class="jiage">
-						商品总价：<span>¥857</span>
-					</div>
-				</div>	
-			</div>
-		</div>
+				<dl class="dianming">
+					<span class="dian">
+						<input type="checkbox" class="kuang">
+					</span> 
+					<span >壹玖美丽化妆品专营店</span>
+				</dl>
+				<div id="meili">
+					<ul id="m-list">
+						<li v-for="(product, index) in productList" :key="index" class="shangpin" >	
+							<span><input type="checkbox" class="kuang" @click.stop="" v-model="checked" :value="index"></span>
+							<span><img :src="product.img" class="c"></span>
+							<span>
+								<span class="product-name"><a href="#">{{product.name}}</a></span><br>
+								<span class="product-select"><img src="images/tian7.jpg" alt="">
+								<span class="product-xuan "> {{product.select}}</span>
+								</span>
+						</span>
+							<span class="product-price">{{product.price}}.00</span>
+							<span>
+								<a href="">-</a>
+								<input type="text" class="msg" placeholder="1">
+								<a href="">+</a>
+							</span> 
+							<span>
+								{{product.price}}.00
+							</span>
+							<span>
+								<img src="images/shoucang.jpg" alt="">
+								<img src="images/del.jpg" alt="" @click.stop="del(index)">
+							</span>
+						</li>
+					</ul>
 		<div class="jiesuan">
 			<div class="center">
 				<dl class="fl">
 					<dt class="fl">
 					<img src="images/gou.jpg">
-					<a href="#">全选 <span>（共<b>4</b>件）</span></a>
+					<a href="#">全选<span>（共<b>3</b>件）</span></a>
 					<a href="#">批量删除</a>
 					</dt>				
 				</dl>
 				<div class="j-right fr">
-					<div class="gong">已选商品<b>4</b>件 <span><a href="#">预览</a></span></div>
-					<div class="he">合计：<span>¥1395.00</span></div>
-					<div class="jie">结算</div>
+					<div class="gong">已选商品<b>3</b>件 <span><a href="#">预览</a></span></div>
+					<div class="he">合计：<span @click="selAll">{{sum}}</span></div>
+					<div class="jie" >结算</div>
 				</div>
 				
 			</div>
@@ -275,6 +174,64 @@
 
 			</div>
 		</div>
+<script src="js/vue.js"></script>
+<script>
+	new Vue({
+    el: '#m-list',
+    data: {
+        productList: [{
+                'name': '迪奥（Dior） 【七夕情人节礼品】Dior迪奥口红女士唇膏 烈艳蓝金999+520（爱你久久）',
+				'select':'烈艳蓝金999+520（爱你久久）',
+                'price': 538.00,
+				'img':'images/dior.jpg',
+                'isRed': false,
+				'weight':'0.26kg',
+            },
+            {
+                'name': '古驰（GUCCI）罪爱女用淡香水 30ml（又名：古驰（GUCCI）罪爱女士淡香水 30ml ) 七夕情人节礼物',
+				'select':'罪爱女  30ml',
+                'price': 89.00,
+				'img':'images/gucci.jpg',
+                'isRed': false,
+				'weight':'0.28kg',
+
+            },
+            {
+                'name': '莫杰（MARC JACOBS）雏菊女士香水50ml（又名：莫杰雏菊女士淡香氛）七夕情人节礼物',
+				'select':'雏菊 50ml',
+                'price':379.00,
+				'img':'images/marc.jpg',
+                'isRed': false,
+				'weight':'0.22kg',
+            },	
+        ],
+		total: 0,
+		checked: [], 
+    },
+    methods: {
+		select(product){            
+             product.isRed = !product.isRed; //方法二
+         },
+		del(index){
+             this.productList.splice(index,1);//splice(删除位置,删除数量)
+             //console.log(this.productList[index].name);
+         },
+		 sum(){
+          let sum=0;
+             let arr = this.productList.filter((val,index)=>{
+                 if(this.checked.includes(index)){
+                    console.log(index, val.name);
+					sum += parseInt(val.price);
+                    return sum;  
+                 }                               
+             });
+		 },
+		 selAll(){
+			 
+         }
+    }
+});
+</script>
 </footer>
 </body>
 </html>
