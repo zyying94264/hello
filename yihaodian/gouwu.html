@@ -44,9 +44,12 @@
 	</header>
 	<main>
 		<div class="center che-up">
-			<div class="che">
+			<div class="che" id="dis">
 				<dl class="quanxuan dianming">
-					<dt class="fl"><input type="checkbox" class="kuang"><a href="#">全选</a></dt>
+					<dt class="fl">
+							<span v-if="isSelectAll==false"  @click="selectAll(),select=!select"><img src="images/no.png">全选</span>
+							<span v-else="isSelectAll==true"  @click="selectNone(),select=!select"><img src="images/gou.jpg">全选</span>
+					</dt>
 					<dd>商品信息</dd>
 					<dd>单价（元）</dd>
 					<dd>数量</dd>
@@ -54,30 +57,29 @@
 					<dd>操作</dd>
 				</dl>
 				<dl class="dianming">
-					<span class="dian">
-						<input type="checkbox" class="kuang">
-					</span> 
-					<span >壹玖美丽化妆品专营店</span>
+						<span v-if="isSelectAll==false"  @click="selectAll(),select=!select"><img src="images/no.png">壹玖美丽化妆品专营店</span>
+						<span v-else="isSelectAll==true"  @click="selectNone(),select=!select"><img src="images/gou.jpg">壹玖美丽化妆品专营店</span>
 				</dl>
 				<div id="meili">
 					<ul id="m-list">
-						<li v-for="(product, index) in productList" :key="index" class="shangpin" >	
-							<span><input type="checkbox" class="kuang" @click.stop="" v-model="checked" :value="index"></span>
+						<li v-for="product in productList" class="shangpin" >	
+							<span v-if="product.select==false"  @click="product.select=!product.select"><img src="images/no.png"></span>
+                            <span v-else="product.select==true"  @click="product.select=!product.select"><img src="images/gou.jpg"></span>
 							<span><img :src="product.img" class="c"></span>
 							<span>
 								<span class="product-name"><a href="#">{{product.name}}</a></span><br>
 								<span class="product-select"><img src="images/tian7.jpg" alt="">
-								<span class="product-xuan "> {{product.select}}</span>
+								<span class="product-xuan "> {{product.kuan}}</span>
 								</span>
 						</span>
 							<span class="product-price">{{product.price}}.00</span>
 							<span>
-								<a href="">-</a>
-								<input type="text" class="msg" placeholder="1">
-								<a href="">+</a>
+							<a class="btn" @click="product.num--">-</a>
+                            <input type="text" class="msg" v-model="product.num" style="text-align: center;"></input>
+                            <a class="btn" @click="product.num++">+</a>
 							</span> 
 							<span>
-								{{product.price}}.00
+								{{product.num*product.price}}.00
 							</span>
 							<span>
 								<img src="images/shoucang.jpg" alt="">
@@ -85,153 +87,184 @@
 							</span>
 						</li>
 					</ul>
-		<div class="jiesuan">
-			<div class="center">
+				</div>
+				<div class="jiesuan">
+				<div class="center">
 				<dl class="fl">
 					<dt class="fl">
-					<img src="images/gou.jpg">
-					<a href="#">全选<span>（共<b>3</b>件）</span></a>
-					<a href="#">批量删除</a>
+							<span v-if="isSelectAll==false"  @click="selectAll(),select=!select"><img src="images/no.png">全选</span>
+							<span v-else="isSelectAll==true"  @click="selectNone(),select=!select"><img src="images/gou.jpg">全选</span>（共<b>{{getTotal.totalNum}}</b>件）</span></a>
+					<a class="d-btn" @click="deleteGoods()">删除选中商品</a>
 					</dt>				
 				</dl>
 				<div class="j-right fr">
-					<div class="gong">已选商品<b>3</b>件 <span><a href="#">预览</a></span></div>
-					<div class="he">合计：<span @click="selAll">{{sum}}</span></div>
+					<div class="gong">已选商品{{getTotal.totalNum}}件 <span><a href="#">预览</a></span></div>
+					<div class="he">合计：{{getTotal.totalPrice}}元</span></div>
 					<div class="jie" >结算</div>
 				</div>
 				
 			</div>
+				</div>
+			</div>
 		</div>
 	</main>
-	<footer>
-		<div class="center">
-			<div class="f-up">
-				<ul>
-					<li> 
-						<p>正品保证</p>
-						<p>正品行货 放心选购</p>
-					</li>
-					<li> 
-						<p>满86包邮</p>
-						<p>满86包邮 免运费</p>
-					</li>
-					<li> 
-						<p>售后无忧</p>
-						<p>7天无理由退货</p>
-					</li>
-					<li> 
-						<p>准时送达</p>
-						<p>收货时间由你做主</p>
-					</li>
-				</ul>
+<footer>
+	<div class="center">
+		<div class="f-up">
+			<ul>
+				<li>
+					<p>正品保证</p>
+					<p>正品行货 放心选购</p>
+				</li>
+				<li>
+					<p>满86包邮</p>
+					<p>满86包邮 免运费</p>
+				</li>
+				<li>
+					<p>售后无忧</p>
+					<p>7天无理由退货</p>
+				</li>
+				<li>
+					<p>准时送达</p>
+					<p>收货时间由你做主</p>
+				</li>
+			</ul>
+		</div>
+		<div class="f-down">
+			<dl>
+				<dt>新手入门</dt>
+				<dd>购物流程</dd>
+				<dd>会员制度</dd>
+				<dd>订单查询</dd>
+				<dd>发票制度</dd>
+				<dd>网站地图</dd>
+			</dl>
+			<dl>
+				<dt>支付方式</dt>
+				<dd>货到付款</dd>
+				<dd>网上支付</dd>
+				<dd>礼品卡支付</dd>
+				<dd>其它支付</dd>
+			</dl>
+			<dl>
+				<dt>配送服务</dt>
+				<dd>配送进度查询</dd>
+				<dd>商品验货与签收</dd>
+			</dl>
+			<dl>
+				<dt>售后保障</dt>
+				<dd>退换货政策</dd>
+				<dd>联系客服</dd>
+			</dl>
+			<div class="er1 fl">
+				<h4>APP更优惠</h4>
+				<img src="images/app.png">
 			</div>
-			<div class="f-down">
-				<dl>
-					<dt>新手入门</dt>
-					<dd>购物流程</dd>
-					<dd>会员制度</dd>
-					<dd>订单查询</dd>
-					<dd>发票制度</dd>
-					<dd>网站地图</dd>
-				</dl>
-				<dl>
-					<dt>支付方式</dt>
-					<dd>货到付款</dd>
-					<dd>网上支付</dd>
-					<dd>礼品卡支付</dd>
-					<dd>其它支付</dd>
-				</dl>
-				<dl>
-					<dt>配送服务</dt>
-					<dd>配送进度查询</dd>
-					<dd>商品验货与签收</dd>
-				</dl>
-				<dl>
-					<dt>售后保障</dt>
-					<dd>退换货政策</dd>
-					<dd>联系客服</dd>
-				</dl>
-				<div class="er1 fl">
-					<h4>APP更优惠</h4>
-					<img src="images/app.png">
-				</div>
-				<div class="er2 fl">
-					<h4>加微信查订单</h4>
-					<img src="images/weixin.jpg">
-				</div>
-			</div>
-			<div class="di">
-				沪ICP备16050468号 |经营证照 | 互联网药品信息服务资格证 | 举报电话：0527-88100253 | 沪B2-20170039 | 沪公网安备 31010502002939号 | 友情链接 | 出版物经营许可证 <br>
-				Copyright© 1号店网上超市 2007-2017，All Rights Reserved
-			</div>
-
-			<div class="shangbiao center">
-				<img src="images/shangjia1.jpg">
-				<img src="images/shangjia2.jpg">
-				<img src="images/shangjia3.jpg">
-				<img src="images/shangjia4.png">
-				<img src="images/shangjia5.jpg">
-
+			<div class="er2 fl">
+				<h4>加微信查订单</h4>
+				<img src="images/weixin.jpg">
 			</div>
 		</div>
+		<div class="di">
+			沪ICP备16050468号 |经营证照 | 互联网药品信息服务资格证 | 举报电话：0527-88100253 | 沪B2-20170039 | 沪公网安备 31010502002939号 | 友情链接 | 出版物经营许可证
+			<br>
+			Copyright© 1号店网上超市 2007-2017，All Rights Reserved
+		</div>
+		<div class="shangbiao center">
+			<img src="images/shangjia1.jpg">
+			<img src="images/shangjia2.jpg">
+			<img src="images/shangjia3.jpg">
+			<img src="images/shangjia4.png">
+			<img src="images/shangjia5.jpg">
+		</div>
+	</div>
+</footer>
 <script src="js/vue.js"></script>
 <script>
 	new Vue({
-    el: '#m-list',
+    el: '#dis',
     data: {
         productList: [{
                 'name': '迪奥（Dior） 【七夕情人节礼品】Dior迪奥口红女士唇膏 烈艳蓝金999+520（爱你久久）',
-				'select':'烈艳蓝金999+520（爱你久久）',
-                'price': 538.00,
+				'kuan':'烈艳蓝金999+520（爱你久久）',
+                'price': 538,
 				'img':'images/dior.jpg',
-                'isRed': false,
 				'weight':'0.26kg',
+				'num':1,
             },
             {
                 'name': '古驰（GUCCI）罪爱女用淡香水 30ml（又名：古驰（GUCCI）罪爱女士淡香水 30ml ) 七夕情人节礼物',
-				'select':'罪爱女  30ml',
-                'price': 89.00,
+				'kuan':'罪爱女  30ml',
+                'price': 89,
 				'img':'images/gucci.jpg',
-                'isRed': false,
 				'weight':'0.28kg',
+				'num':2
 
             },
             {
                 'name': '莫杰（MARC JACOBS）雏菊女士香水50ml（又名：莫杰雏菊女士淡香氛）七夕情人节礼物',
-				'select':'雏菊 50ml',
-                'price':379.00,
+				'kuan':'雏菊 50ml',
+                'price':379,
 				'img':'images/marc.jpg',
-                'isRed': false,
 				'weight':'0.22kg',
+				'num':2
             },	
         ],
 		total: 0,
-		checked: [], 
+		select: false,
     },
     methods: {
-		select(product){            
-             product.isRed = !product.isRed; //方法二
-         },
+		selectAll: function () {
+                for (var i = 0; i < this.productList.length; i++) {
+                    this.productList[i].select = true;
+                }
+            },
+        selectNone: function () {
+                for (var i = 0; i < this.productList.length; i++) {
+                    this.productList[i].select = false;
+                }
+            },
 		del(index){
              this.productList.splice(index,1);//splice(删除位置,删除数量)
              //console.log(this.productList[index].name);
          },
-		 sum(){
-          let sum=0;
-             let arr = this.productList.filter((val,index)=>{
-                 if(this.checked.includes(index)){
-                    console.log(index, val.name);
-					sum += parseInt(val.price);
-                    return sum;  
-                 }                               
-             });
-		 },
-		 selAll(){
-			 
-         }
-    }
+		deleteGoods: function () {
+                this.productList = this.productList.filter(function (item) {
+                    return !item.select
+                });
+            },
+    },
+	computed: {
+            isSelectAll: function () {
+                //如果每一条数据的select都为true，返回true，否则返回false;
+                return this.productList.every(function (val) {
+                    return val.select
+                });
+            },
+            getTotal: function () {
+                //获取productList中select为true的数据。
+                var _proList = this.productList.filter(function (val) {
+                        return val.select
+                    }),
+                    totalPrice = 0;
+                for (var i = 0, len = _proList.length; i < len; i++) {
+                    //总价累加
+                    totalPrice += _proList[i].num * _proList[i].price;
+                }
+                //选择产品的件数就是_proList.length，总价就是totalPrice
+                return {
+                    totalNum: _proList.length,
+                    totalPrice: totalPrice
+                }
+            },
+        },
+		mounted: function () {
+            var _this = this;
+            this.productList.map(function (product) {
+                _this.$set(product, 'select', false);
+            })
+        }
 });
 </script>
-</footer>
 </body>
 </html>

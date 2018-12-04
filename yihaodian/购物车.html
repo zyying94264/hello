@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    	.left{
+		display: block;
+		float: left;
+		width: 80px;
+		height: 100px;
+	}
+	.right{
+		display: block;
+		margin-left: 90px;
+		height: 100px;
+	}
+	.number{
+		width: 40px;
+	}
+    </style>
+
+</head>
+<body>
+    <body class="container"  >
+        <p>购物清单</p>
+        <div id="app">
+            <table class="table" >
+                    <tr>
+                        <td>
+                        <span v-if="isSelectAll==false"  @click="selectAll(),select=!select"><img src="images/no.png">全选</span>
+                        <span v-else="isSelectAll==true"  @click="selectNone(),select=!select"><img src="images/gou.jpg">全选</span>
+                        </td>
+                        <td>商品</td>
+                        <td>数量</td>
+                        <td>单价(元)</td>
+                        <td>金额(元)</td>
+                        <td>操作</td>
+                    </tr>
+                    <tr v-for="goods in goodsList">
+                        <td>
+                            <span v-if="goods.select==false"  @click="goods.select=!goods.select"><img src="images/no.png"></span>
+                            <span v-else="gooods.select==true"  @click="goods.select=!goods.select"><img src="images/gou.jpg"></span>
+                        </td>
+                        <td>
+                                <div class="left"><img :src="goods.img" style="width: 100;height: 100%;"></div>
+                                <div class="right">
+                                    <h5>{{goods.name}}</h5>
+                                    <p>{{goods.select}}</p>
+                                    <p></p>
+                                    <p>配送仓储:{{goods.send}}</p>
+                                </div>
+                        </td>
+                        <td>
+                            <a class="btn" @click="goods.num--">-</a>
+                            <input type="text" class="number" v-model="goods.num" style="text-align: center;"></input>
+                            <a class="btn" @click="goods.num++">+</a>
+                        </td>
+                        <td>${{goods.price}}</td>
+                        <td>${{goods.num*goods.price}}</td>
+                        <td><a class="btn btn-danger" @click="deleteOne(index)">删除</a></td>
+                    </tr>
+            </table>
+            <p style="float: left;"><a class="btn" @click="deleteGoods()">删除选中商品</a></p>
+            <p style="float: right;">您挑选了{{getTotal.totalNum}}商品，共计{{getTotal.totalPrice}}元</p>
+        </div>
+
+    
+<script src="js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            select: false,
+            goodsList: [{
+                name: '迪奥（Dior） 【七夕情人节礼品】Dior迪奥口红女士唇膏 烈艳蓝金999+520（爱你久久）',
+				select:'烈艳蓝金999+520（爱你久久）',
+                price: 538.00,
+				img:'images/dior.jpg',
+                isRed: false,
+				weight:'0.26kg',
+            },
+            {
+                name: '古驰（GUCCI）罪爱女用淡香水 30ml（又名：古驰（GUCCI）罪爱女士淡香水 30ml ) 七夕情人节礼物',
+				select:'罪爱女  30ml',
+                price: 89.00,
+				img:'images/gucci.jpg',
+                isRed: false,
+				weight:'0.28kg',
+
+            },
+            {
+                'name': '莫杰（MARC JACOBS）雏菊女士香水50ml（又名：莫杰雏菊女士淡香氛）七夕情人节礼物',
+				'select':'雏菊 50ml',
+                'price':379.00,
+				'img':'images/marc.jpg',
+                'isRed': false,
+				'weight':'0.22kg',
+            },
+            ]
+        },
+        methods: {
+            selectAll: function () {
+                for (var i = 0; i < this.goodsList.length; i++) {
+                    this.goodsList[i].select = true;
+                }
+            },
+            selectNone: function () {
+                for (var i = 0; i < this.goodsList.length; i++) {
+                    this.goodsList[i].select = false;
+                }
+            },
+            deleteOne: function (index) {
+                //选中之后删除
+                //this.goodsList=this.goodsList.filter(function (item) {return !item.select});
+                //点击删除按钮后直接删除
+                this.goodsList.splice(index, 1);
+            },
+            deleteGoods: function () {
+                this.goodsList = this.goodsList.filter(function (item) {
+                    return !item.select
+                });
+            },
+        },
+        computed: {
+            isSelectAll: function () {
+                //如果每一条数据的select都为true，返回true，否则返回false;
+                return this.goodsList.every(function (val) {
+                    return val.select
+                });
+            },
+            getTotal: function () {
+                //获取goodsList中select为true的数据。
+                var _proList = this.goodsList.filter(function (val) {
+                        return val.select
+                    }),
+                    totalPrice = 0;
+                for (var i = 0, len = _proList.length; i < len; i++) {
+                    //总价累加
+                    totalPrice += _proList[i].num * _proList[i].price;
+                }
+                //选择产品的件数就是_proList.length，总价就是totalPrice
+                return {
+                    totalNum: _proList.length,
+                    totalPrice: totalPrice
+                }
+            },
+        },
+        mounted: function () {
+            var _this = this;
+            this.goodsList.map(function (goods) {
+                _this.$set(goods, 'select', false);
+            })
+        }
+    })
+</script>
+</body>
+</html>

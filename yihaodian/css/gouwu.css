@@ -15,31 +15,13 @@ header .big .look .look-up input{width:298px;height:35px;border:none; background
 /*main*/
 main{width: 100%;overflow: hidden; background: #F8F8F8;}
 main .che-up{overflow: hidden;}
-main .che{width: 100%; padding-top: 10px;margin-bottom: 10px;height: 880px;}
+main .che{width: 100%; padding-top: 10px;margin-bottom: 10px;}
 main .che .quanxuan{width:100%;height: 40px; border: 1px solid #DFDFDF;border-radius: 8px;line-height: 40px;background-color: #fff;}
-main .che .quanxuan dt{position: relative;}
-main .che .quanxuan dt img{position: absolute; left: 7px ;top: 13px;display: none;}
-main .che .quanxuan dt:hover img{display: block;}
-main .che .quanxuan dd{float: left;margin-left: 100px;}
-
+main .che .quanxuan img{padding: 0 10px ;vertical-align:middle;}
+main .che .quanxuan dd{float: left;margin-left: 120px;}
 main .che .dianming{width:100%;height: 40px; border: 1px solid #DFDFDF;border-radius: 8px;line-height: 40px;background-color: #fff;margin-top: 25px;}
-main .che input[type="checkbox"]{
-    -webkit-appearance: none;
-    height: 16px;
-    vertical-align: middle;
-    width: 16px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    outline: none;
-    background: #fff url(../images/gou.jpg) no-repeat;
-    margin: 5px 10px;
-}
-main .che  input[type="checkbox"]:checked{
-    background-position: -48px;
-    outline: none;
-}
+main .che .dianming img{padding: 0 10px ;vertical-align:middle;}
 main .che #meili{width: 100%;overflow:hidden;border: 1px solid #DFDFDF;margin: 20px 0;border-radius: 8px;background-color: #fff;}
-main .che #meili #m-list{width:100%;height:400px;}
 main .che #meili #m-list .change{background:#FFF7F7;}
 main .che #meili #m-list .shangpin{width:100%;height:120px;background: #fff;border-bottom: 1px dashed #ccc;padding-top: 20px;}
 
@@ -115,17 +97,17 @@ main .che #meili #m-list .shangpin span:nth-child(7) a{
 
 main .jiesuan{width:100%;height:60px;background-color: #fff;}
 main .jiesuan dl{padding-top: 20px;}
-main .jiesuan dl dt img{vertical-align: middle;padding-right: 10px;}
+main .jiesuan dl dt img{vertical-align: middle;padding:0 10px ;}
 main .jiesuan dl dt a:nth-of-type(1){border-right: 1px solid #999;}
 main .jiesuan dl dt a:nth-of-type(1) b{color: #f00;padding: 0 3px;}
 main .jiesuan dl dt a:nth-of-type(2){color: #999;padding-left: 10px;}
 main .jiesuan dl dt a:nth-of-type(2):hover {color:#f00; }
 main .jiesuan dl dt a:hover{text-decoration: none;}
-
+main .jiesuan dl .d-btn{cursor: pointer;}
 main .j-right{width: 360px;}
 main .j-right div{float: left;color: #000;line-height: 20px;padding-left: 5px;height: 20px;margin-top:20px; }
 main .j-right .gong {width: 100px;padding-right: 5px;margin-right: 10px;}
 main .j-right .gong b{color: #f00;padding: 0 2px;}
-main .j-right .he{border-left:1px solid #999;margin-right: 10px;}
+main .j-right .he{border-left:1px solid #999;margin-right: 10px;width: 100px;font-size: 14px;}
 main .j-right .he span{color: #f00;font-size: 20px;}
 main .j-right .jie{width: 80px;height: 60px;background: #FF6C6C;margin-top: 0;line-height: 60px;font-size: 20px;font-weight: bold;color: #fff;text-align: center;padding-left: 0;margin:0 0 40px 20px;}
