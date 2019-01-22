@@ -17,7 +17,7 @@
 import loginForm from './Login-form'
 import { mapActions } from 'vuex'
 import { login } from '@/api/user'
-
+import { setToken } from '@/libs/util'
 export default {
   name:'Login',
   components: {
@@ -30,6 +30,7 @@ export default {
     handleSubmit ({ username, password }) {
         login({ username, password }).then(res => {
           if(res.status == 200){
+            setToken(res.data.data.id)
             this.$router.push('/');
             this.$Message.success('登录成功');
           }     

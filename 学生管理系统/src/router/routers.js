@@ -7,24 +7,30 @@ export default [
       name: 'HelloWorld',
       component: HelloWorld,
       redirect:'/main',
-      meta: {
-				requireAuth: true
-      },
       children:[
         {
           path:'main',
           name:'main',
-          component: () => import('@/components/main/Main.vue')
+          component: () => import('@/components/main/Main.vue'),
+          meta: {
+            requireAuth: true
+          },
         },
         {
           path:'teacher',
           name:'teacher',
-          component: () => import('@/components/main/Teacher.vue')
+          component: () => import('@/components/main/Teacher.vue'),
+          meta: {
+              requireAuth: true
+          },
         },
         {
           path:'student',
           name:'student',
-          component: () => import('@/components/main/Student.vue')
+          component: () => import('@/components/main/Student.vue'),
+          meta: {
+            requireAuth: true
+          },
         }
       ]
     },
